@@ -1,8 +1,13 @@
+get '/users' do
+  @users = User.all
+end
+
+
 get '/users/new' do
   erb :'users/new'
 end
 
-post '/users/new' do
+post '/users' do
   @user = User.new(params[:user])
   if @user.save
     redirect '/'
