@@ -3,3 +3,4 @@ get '/followers/:id' do
   @followings = @user.followers
   erb :'following/show'
 end
+

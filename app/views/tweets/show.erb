@@ -3,6 +3,13 @@
 <h1> Welcome, <%=@user.username.upcase %>!</h1>
 <% else %>
 <h1> <%= @user.username.upcase%>'s Profile</h1>
+<!-- Button here --><form action="/followees/<%=@user.id%>" method="post">
+<input type="submit" value="Follow">
+</form>
+<form action="/followees/<%=@user.id%>" method="post">
+<input type="hidden" name="_method" value="Delete">
+<input type="submit" value="Unfollow!">
+</form>
 <% end %>
 <ul>
 <div class="container">
