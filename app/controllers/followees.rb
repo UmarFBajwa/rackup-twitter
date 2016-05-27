@@ -14,5 +14,11 @@ post '/followees/:id' do
   else
     new_follow.save
   end
+end
 
+delete '/followees/:id' do
+  @user = User.find(params[:id])
+  destroy_follow = Following.find_by(follower_id: session[:user_id], followee_id: @user.id)
+  destroy_follow.destroy
+    redirect "/users/#{@user.id}/tweets"
 end

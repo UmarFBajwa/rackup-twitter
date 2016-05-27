@@ -6,6 +6,10 @@
 <!-- Button here --><form action="/followees/<%=@user.id%>" method="post">
 <input type="submit" value="Follow">
 </form>
+<form action="/followees/<%=@user.id%>" method="post">
+<input type="hidden" name="_method" value="Delete">
+<input type="submit" value="Unfollow!">
+</form>
 <% end %>
 <ul>
 <div class="container">
