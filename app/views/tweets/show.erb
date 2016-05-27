@@ -1,6 +1,7 @@
-<h1> This is all of your tweets </h1>
+<h1> This are all of your tweets </h1>
 <ul>
 <div class="container">
+<a href="/followers/<%=@user.id%>">Followers</a> <a href="/followees/<%=@user.id%>">Following</a>
 <center><form action="/users/<%=@user.id%>/tweets" method="post">
 Post a New Tweet:
 <input type="text" name="body" placeholder="Your Tweet here"><input type="submit" value="Tweet">
@@ -23,5 +24,7 @@ Post a New Tweet:
   </form><br>
 <% end %>
 </ul>
+
+
 
 
