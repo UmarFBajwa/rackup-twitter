@@ -18,6 +18,7 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb :'users/show'
+  @tweets = Tweet.where(user_id: @user.id)
+  erb :'tweets/show'
 end
 
