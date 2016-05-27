@@ -10,6 +10,16 @@ Post a New Tweet:
 
 <%@user.tweets.each do |tweet|  %>
   <li><%= tweet.body %></li>
+  <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="tweet" placeholder="Edit tweet">
+  <input type="submit" value="Edit">
+  </form>
+
+  <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+  </form>
 <% end %>
 </ul>
 
