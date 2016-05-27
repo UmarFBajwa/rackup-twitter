@@ -1,5 +1,16 @@
 <h1> This is all of your tweets </h1>
+<ul>
+<div class="container">
+<center><form action="/users/<%=@user.id%>/tweets" method="post">
+Post a New Tweet:
+<input type="text" name="body" placeholder="Your Tweet here"><input type="submit" value="Tweet">
+</form></center>
+</div>
+
 
 <%@user.tweets.each do |tweet|  %>
-  <p><%= tweet.body %> </p>
+  <li><%= tweet.body %></li>
 <% end %>
+</ul>
+
+
