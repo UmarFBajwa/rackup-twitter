@@ -1,6 +1,3 @@
-# get '/tweets' do
-#   @tweet = Tweet.all
-# end
 
 get '/tweets/index'do
   @tweet = Tweet.order('id DESC')
@@ -19,7 +16,7 @@ post '/users/:id/tweets' do
   if @tweet.save
     redirect "/users/#{@user.id}/tweets"
   else
-    redirect "/users/show"
+    redirect "/users"
   end
 end
 

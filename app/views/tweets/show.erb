@@ -1,16 +1,26 @@
-<h1> This is all of your tweets </h1>
+
+<% if @user.id == session[:user_id] %>
+<h1> Welcome, <%=@user.username.upcase %>!</h1>
+<% else %>
+<h1> <%= @user.username.upcase%>'s Profile</h1>
+<% end %>
 <ul>
 <div class="container">
+<a href="/followers/<%=@user.id%>">Followers</a> <a href="/followees/<%=@user.id%>">Following</a><br><br>
+
+<% if @user.id == session[:user_id] %>
 <center><form action="/users/<%=@user.id%>/tweets" method="post">
 Post a New Tweet:
 <input type="text" name="body" placeholder="Your Tweet here"><input type="submit" value="Tweet">
 </form></center>
+<% end %>
 </div>
 
 
 <%@tweets.each do |tweet|  %>
   <li><%= tweet.body %></li>
-  User: <%= tweet.user.username %>
+  User: <%= tweet.user.username %><br><br>
+  <% if @user.id == session[:user_id] %>
   <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
   <input type="hidden" name="_method" value="put">
   <input type="text" name="tweet" placeholder="Edit tweet">
@@ -21,7 +31,10 @@ Post a New Tweet:
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
   </form><br>
-<% end %>
+  <% end %>
+  <% end %>
 </ul>
+
+
 
 
