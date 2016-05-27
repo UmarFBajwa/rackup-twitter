@@ -1,5 +1,4 @@
 <div class="general">
-  <h1> These are all of your tweets </h1>
   <% if @user.id == session[:user_id] %>
   <h1> Welcome, <%=@user.username.upcase %>!</h1>
   <% else %>
@@ -12,36 +11,40 @@
   <input type="submit" value="Unfollow!">
 </form>
 <% end %>
-<ul>
-  <div class="container">
-    <a href="/followers/<%=@user.id%>">Followers</a> <a href="/followees/<%=@user.id%>">Following</a><br><br>
 
-    <% if @user.id == session[:user_id] %>
-    <center><form action="/users/<%=@user.id%>/tweets" method="post">
-      Post a New Tweet:
-      <input type="text" name="body" placeholder="Your Tweet here"><input type="submit" value="Tweet">
-    </form></center>
-    <% end %>
-  </div>
+<div class="container-followings">
+  <a href="/followers/<%=@user.id%>">Followers</a> || <a href="/followees/<%=@user.id%>">Following</a><br><br>
 
+  <% if @user.id == session[:user_id] %>
+  <center><form action="/users/<%=@user.id%>/tweets" method="post">
+    Post a New Tweet:
+    <input type="text" name="body" placeholder="Your Tweet here"><input type="submit" value="Tweet">
+  </form></center>
+  <% end %>
+  <br>
+  <br>
+  <br>
+</div>
 
+<div class="tweets" >
   <%@tweets.each do |tweet|  %>
-  <li><%= tweet.body %></li>
+
+  <p><%= tweet.body %></p>
   User: <%= tweet.user.username %><br><br>
   <% if @user.id == session[:user_id] %>
   <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
     <input type="hidden" name="_method" value="put">
     <input type="text" name="tweet" placeholder="Edit tweet">
-    <input type="submit" value="Edit">
+    <input type="button" class="btn btn-success" value="Edit">
   </form>
 
   <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
+    <input type="button" class="btn btn-danger" value="Delete">
   </form><br>
   <% end %>
   <% end %>
-</ul>
+
 </div>
 
 

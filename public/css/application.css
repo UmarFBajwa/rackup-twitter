@@ -10,4 +10,28 @@
 }
 .general {
   text-align: justify;
+  font-family: Helvetica;
+  margin-top: 10%;
 }
+h1 {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.container-followings {
+  text-align: center;
+}
+
+.tweets {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  text-align: center;
+}
+
+#header {
+  padding: 10px;
+  font-family: Helvetica;
+}
+
