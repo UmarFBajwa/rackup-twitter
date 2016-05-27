@@ -8,7 +8,7 @@ Post a New Tweet:
 </div>
 
 
-<%@user.tweets.each do |tweet|  %>
+<%@tweets.each do |tweet|  %>
   <li><%= tweet.body %></li>
   User: <%= tweet.user.username %>
   <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
