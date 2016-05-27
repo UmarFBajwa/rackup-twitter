@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   include BCrypt
   has_many :tweets
 
+  has_many :followings_as_follower, class_name: 'Following', foreign_key: :follower_id
+  has_many :followings_as_followee, class_name: 'Following', foreign_key: :followee_id
+  has_many :followers, through: :followings_as_followee
+  has_many :followees, through: :followings_as_follower
+
   validates_presence_of :username, :email, :password
   validates :username, uniqueness: true
   validates :email, format: {with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/,
