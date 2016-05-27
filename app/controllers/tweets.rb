@@ -1,4 +1,8 @@
-get '/tweets' do
+# get '/tweets' do
+#   @tweet = Tweet.all
+# end
+
+get '/tweets/index'do
   @tweet = Tweet.all
   erb :'tweets/index'
 end
