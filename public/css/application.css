@@ -1,12 +1,12 @@
 
 .site-wrapper{
-    text-align: center;
-    background-image: url("https://mastajappa.files.wordpress.com/2011/02/city_night-00000.jpg");
-    height: 100vh;
-    color: white;
-    padding: 10%;
-    font-family: cursive;
-    font-size: 40px;
+  text-align: center;
+  background-image: url("https://mastajappa.files.wordpress.com/2011/02/city_night-00000.jpg");
+  height: 100vh;
+  color: white;
+  padding: 10%;
+  font-family: cursive;
+  font-size: 40px;
 }
 .general {
   text-align: justify;
@@ -16,6 +16,20 @@
 h1 {
   text-align: center;
   margin-top: 10%;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 1%;
+  padding-bottom: 5%;
+}
+.register {
+  text-align: center;
+  color: #5bc0de;
+  padding: 10%;
+  font-family: Helvetica;
+  font-size: 18px;
+
 }
 
 .container-followings {
