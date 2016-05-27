@@ -9,6 +9,7 @@ end
 
 get '/users/:id/tweets' do
   @user = User.find(params[:id])
+  @tweets = @user.tweets.order('id DESC')
   erb :'tweets/show'
 end
 
