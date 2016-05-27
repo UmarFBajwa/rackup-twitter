@@ -1,11 +1,11 @@
-get '/login/:id' do
-  @login = User.find(params[:id])
+# get '/login/:id' do
+#   @login = User.find(params[:id])
 
-end
+# end
 
 
-post '/login' do
-
+post '/login/' do
+  erb :"users/show"
 end
 
 
