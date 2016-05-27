@@ -3,7 +3,7 @@
 # end
 
 get '/tweets/index'do
-  @tweet = Tweet.all
+  @tweet = Tweet.order('id DESC')
   erb :'tweets/index'
 end
 
