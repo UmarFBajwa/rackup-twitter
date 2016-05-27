@@ -1,5 +1,6 @@
 get '/tweets' do
   @tweet = Tweet.all
+  erb :'tweets/index'
 end
 
 get '/users/:id/tweets' do
