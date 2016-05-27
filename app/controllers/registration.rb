@@ -1,19 +1,13 @@
-# get '/login/:id' do
-#   @login = User.find(params[:id])
-
-# end
-
-
 post '/login' do
   user = User.authenticate(params[:username], params[:password])
+  puts "*"*50
   if user
     session[:user_id] = user.id
-    erb :"users/#{user.id}"
+    redirect "users/#{user.id}"
   else
     redirect '/'
   end
 end
-
 
 get '/logout' do
   session.clear
