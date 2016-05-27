@@ -1,5 +1,6 @@
 get '/login/:id' do
   @login = User.find(params[:id])
+
 end
 
 
