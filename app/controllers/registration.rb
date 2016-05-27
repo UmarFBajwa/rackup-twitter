@@ -3,7 +3,7 @@ post '/login' do
   puts "*"*50
   if user
     session[:user_id] = user.id
-    redirect "users/#{user.id}"
+     redirect "users/#{user.id}/tweets"
   else
     redirect '/'
   end
