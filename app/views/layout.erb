@@ -28,16 +28,13 @@
 <body>
   <nav class="header"><center>
    <% if current_user %>
-   <a href="/users/<%= current_user.id %>/tweets">Home</a>
-   <a href="/tweets/index">View all tweets!</a>
-   <a href='/logout'>Logout</a>
+   <a href="/users/<%= current_user.id %>/tweets">Home</a> |
+   <a href="/tweets/index">View all tweets!</a> |
+   <a href='/logout'>Logout</a> |
 
    Signed in as: <%= current_user.username %>
    <% end %>
  </center></nav>
- <br>
- <br>
- <br>
  <%= yield %>
 </body>
 </html>
