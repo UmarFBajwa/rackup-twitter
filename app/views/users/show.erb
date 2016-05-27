@@ -1,2 +1,8 @@
 <h2>Hello <%= @user.username %></h2>
 
+
+<form action="/users/<%=@user.id%>/tweets" method="post">
+Enter Your Tweet:
+<input type="text" name="body" placeholder="Your Tweet here"><br>
+<input type="submit" value="Tweet">
+</form>
