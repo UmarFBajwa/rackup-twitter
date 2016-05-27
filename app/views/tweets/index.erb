@@ -3,6 +3,7 @@
 <% @tweet.each do |tweet|%>
 <ul>
 <li><%= p tweet.body %><br></li>
+  User: <%= tweet.user.username %>
 </ul>
 <% end %>
 
