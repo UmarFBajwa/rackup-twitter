@@ -35,12 +35,12 @@
   <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
     <input type="hidden" name="_method" value="put">
     <input type="text" name="tweet" placeholder="Edit tweet">
-    <input type="button" class="btn btn-success" value="Edit">
+    <input type="submit" class="btn btn-success" value="Edit">
   </form>
 
   <form action= '/users/<%= @user.id %>/tweets/<%=tweet.id %>/edit' method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="button" class="btn btn-danger" value="Delete">
+    <input type="submit" class="btn btn-danger" value="Delete">
   </form><br>
   <% end %>
   <% end %>
